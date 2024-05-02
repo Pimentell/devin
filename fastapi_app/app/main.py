@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 from pydantic import BaseModel
 
 app = FastAPI()

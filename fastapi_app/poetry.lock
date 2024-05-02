@@ -127,6 +127,14 @@ marshmallow = ">=3.18.0,<4.0.0"
 typing-inspect = ">=0.4.0,<1"
 
 [[package]]
+name = "distro"
+version = "1.9.0"
+description = "Distro - an OS platform information API"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "exceptiongroup"
 version = "1.2.1"
 description = "Backport of PEP 654 (exception groups)"
@@ -180,6 +188,45 @@ description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
 category = "main"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "httpcore"
+version = "1.0.5"
+description = "A minimal low-level HTTP client."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+certifi = "*"
+h11 = ">=0.13,<0.15"
+
+[package.extras]
+asyncio = ["anyio (>=4.0,<5.0)"]
+http2 = ["h2 (>=3,<5)"]
+socks = ["socksio (>=1.0.0,<2.0.0)"]
+trio = ["trio (>=0.22.0,<0.26.0)"]
+
+[[package]]
+name = "httpx"
+version = "0.27.0"
+description = "The next generation HTTP client."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+anyio = "*"
+certifi = "*"
+httpcore = ">=1.0.0,<2.0.0"
+idna = "*"
+sniffio = "*"
+
+[package.extras]
+brotli = ["brotli", "brotlicffi"]
+cli = ["click (>=8.0.0,<9.0.0)", "pygments (>=2.0.0,<3.0.0)", "rich (>=10,<14)"]
+http2 = ["h2 (>=3,<5)"]
+socks = ["socksio (>=1.0.0,<2.0.0)"]
 
 [[package]]
 name = "idna"
@@ -364,6 +411,26 @@ optional = false
 python-versions = ">=3.9"
 
 [[package]]
+name = "openai"
+version = "1.25.1"
+description = "The official Python library for the openai API"
+category = "main"
+optional = false
+python-versions = ">=3.7.1"
+
+[package.dependencies]
+anyio = ">=3.5.0,<5"
+distro = ">=1.7.0,<2"
+httpx = ">=0.23.0,<1"
+pydantic = ">=1.9.0,<3"
+sniffio = "*"
+tqdm = ">4"
+typing-extensions = ">=4.7,<5"
+
+[package.extras]
+datalib = ["numpy (>=1)", "pandas-stubs (>=1.1.0.11)", "pandas (>=1.2.3)"]
+
+[[package]]
 name = "orjson"
 version = "3.10.2"
 description = "Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy"
@@ -542,6 +609,23 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "tqdm"
+version = "4.66.2"
+description = "Fast, Extensible Progress Meter"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+dev = ["pytest (>=6)", "pytest-cov", "pytest-timeout", "pytest-xdist"]
+notebook = ["ipywidgets (>=6)"]
+slack = ["slack-sdk"]
+telegram = ["requests"]
+
+[[package]]
 name = "typing-extensions"
 version = "4.11.0"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -606,7 +690,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "96252c085e1b0fc196370d5e485602c2b8a50be78b4abcaab4061a5e02c6d67d"
+content-hash = "e8c712a00eae1bbca05d6dddbe1be00919570a1cd9f2e5677871619a82b51ca0"
 
 [metadata.files]
 aiohttp = []
@@ -620,11 +704,14 @@ charset-normalizer = []
 click = []
 colorama = []
 dataclasses-json = []
+distro = []
 exceptiongroup = []
 fastapi = []
 frozenlist = []
 greenlet = []
 h11 = []
+httpcore = []
+httpx = []
 idna = []
 iniconfig = []
 jsonpatch = []
@@ -638,6 +725,7 @@ marshmallow = []
 multidict = []
 mypy-extensions = []
 numpy = []
+openai = []
 orjson = []
 packaging = []
 pluggy = []
@@ -651,6 +739,7 @@ sqlalchemy = []
 starlette = []
 tenacity = []
 tomli = []
+tqdm = []
 typing-extensions = []
 typing-inspect = []
 urllib3 = []

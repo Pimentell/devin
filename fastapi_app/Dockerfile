@@ -17,5 +17,8 @@ RUN poetry config virtualenvs.create false \
 # Copy the rest of the codebase into the container
 COPY . /app
 
+# Set the OpenAI API key as an environment variable
+ENV OPENAI_API_KEY=""
+
 # Command to run the application using Uvicorn
 CMD ["poetry", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]

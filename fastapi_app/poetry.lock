@@ -344,6 +344,19 @@ tenacity = ">=8.1.0,<9.0.0"
 extended-testing = ["jinja2 (>=3,<4)"]
 
 [[package]]
+name = "langchain-openai"
+version = "0.1.5"
+description = "An integration package connecting OpenAI and LangChain"
+category = "main"
+optional = false
+python-versions = "<4.0,>=3.8.1"
+
+[package.dependencies]
+langchain-core = ">=0.1.46,<0.2.0"
+openai = ">=1.10.0,<2.0.0"
+tiktoken = ">=0.5.2,<1"
+
+[[package]]
 name = "langchain-text-splitters"
 version = "0.0.1"
 description = "LangChain text splitting utilities"
@@ -513,6 +526,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "regex"
+version = "2024.4.28"
+description = "Alternative regular expression module, to replace re."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
 name = "requests"
 version = "2.31.0"
 description = "Python HTTP for Humans."
@@ -599,6 +620,21 @@ python-versions = ">=3.7"
 
 [package.extras]
 doc = ["reno", "sphinx", "tornado (>=4.5)"]
+
+[[package]]
+name = "tiktoken"
+version = "0.6.0"
+description = "tiktoken is a fast BPE tokeniser for use with OpenAI's models"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+regex = ">=2022.1.18"
+requests = ">=2.26.0"
+
+[package.extras]
+blobfile = ["blobfile (>=2)"]
 
 [[package]]
 name = "tomli"
@@ -690,7 +726,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "e8c712a00eae1bbca05d6dddbe1be00919570a1cd9f2e5677871619a82b51ca0"
+content-hash = "a82ba76cb19e58ded96752172244cf99fd13f817485c6ce3c8cdb565d7d044dc"
 
 [metadata.files]
 aiohttp = []
@@ -719,6 +755,7 @@ jsonpointer = []
 langchain = []
 langchain-community = []
 langchain-core = []
+langchain-openai = []
 langchain-text-splitters = []
 langsmith = []
 marshmallow = []
@@ -733,11 +770,13 @@ pydantic = []
 pydantic-core = []
 pytest = []
 pyyaml = []
+regex = []
 requests = []
 sniffio = []
 sqlalchemy = []
 starlette = []
 tenacity = []
+tiktoken = []
 tomli = []
 tqdm = []
 typing-extensions = []

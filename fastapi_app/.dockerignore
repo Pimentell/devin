@@ -1,0 +1,12 @@
+# Ignore the git and virtual environment directories
+.git
+venv
+
+# Ignore all __pycache__ directories
+__pycache__
+
+# Ignore all .pyc files
+*.pyc
+
+# Ignore .env files
+.env

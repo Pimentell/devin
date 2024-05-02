@@ -190,6 +190,14 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "iniconfig"
+version = "2.0.0"
+description = "brain-dead simple config-ini parsing"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "jsonpatch"
 version = "1.33"
 description = "Apply JSON-Patches (RFC 6902)"
@@ -372,6 +380,18 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "pluggy"
+version = "1.5.0"
+description = "plugin and hook calling mechanisms for python"
+category = "dev"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+dev = ["pre-commit", "tox"]
+testing = ["pytest", "pytest-benchmark"]
+
+[[package]]
 name = "pydantic"
 version = "2.7.1"
 description = "Data validation using Python type hints"
@@ -397,6 +417,25 @@ python-versions = ">=3.8"
 
 [package.dependencies]
 typing-extensions = ">=4.6.0,<4.7.0 || >4.7.0"
+
+[[package]]
+name = "pytest"
+version = "8.2.0"
+description = "pytest: simple powerful testing with Python"
+category = "dev"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+colorama = {version = "*", markers = "sys_platform == \"win32\""}
+exceptiongroup = {version = ">=1.0.0rc8", markers = "python_version < \"3.11\""}
+iniconfig = "*"
+packaging = "*"
+pluggy = ">=1.5,<2.0"
+tomli = {version = ">=1", markers = "python_version < \"3.11\""}
+
+[package.extras]
+dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
 
 [[package]]
 name = "pyyaml"
@@ -495,6 +534,14 @@ python-versions = ">=3.7"
 doc = ["reno", "sphinx", "tornado (>=4.5)"]
 
 [[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "typing-extensions"
 version = "4.11.0"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -559,7 +606,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "438572849a918635717c4a9cf410c1dded17ae64b5bcdf19e90ba20e77c0f704"
+content-hash = "96252c085e1b0fc196370d5e485602c2b8a50be78b4abcaab4061a5e02c6d67d"
 
 [metadata.files]
 aiohttp = []
@@ -579,6 +626,7 @@ frozenlist = []
 greenlet = []
 h11 = []
 idna = []
+iniconfig = []
 jsonpatch = []
 jsonpointer = []
 langchain = []
@@ -592,14 +640,17 @@ mypy-extensions = []
 numpy = []
 orjson = []
 packaging = []
+pluggy = []
 pydantic = []
 pydantic-core = []
+pytest = []
 pyyaml = []
 requests = []
 sniffio = []
 sqlalchemy = []
 starlette = []
 tenacity = []
+tomli = []
 typing-extensions = []
 typing-inspect = []
 urllib3 = []

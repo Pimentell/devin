@@ -4,12 +4,6 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-# Placeholder for OpenAI API key
-openai_api_key = "openai_api_key_placeholder"
-
-# Initialize Langchain with OpenAI LLM
-llm = OpenAI(api_key=openai_api_key)
-
 class OpenAIRequest(BaseModel):
     prompt: str
     max_tokens: int
@@ -24,6 +18,10 @@ async def healthcheck():
 
 @app.post('/openai')
 async def openai_interaction(request: OpenAIRequest):
+    # Placeholder for OpenAI API key
+    openai_api_key = "openai_api_key_placeholder"
+    # Initialize Langchain with OpenAI LLM inside the function
+    llm = OpenAI(api_key=openai_api_key)
     # Wrap the prompt in a list to match the expected input type for llm.generate
     response = llm.generate([request.prompt], max_tokens=request.max_tokens)
     return {'response': response}

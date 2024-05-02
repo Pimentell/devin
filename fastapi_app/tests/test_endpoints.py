@@ -14,10 +14,11 @@ def test_healthcheck():
     assert response.status_code == 200
     assert response.json() == {"status": "ok"}
 
-@patch('app.main.llm.generate')
-def test_openai_interaction(mock_generate):
-    # Mock the response of the llm.generate method
-    mock_generate.return_value = ["Mocked response"]
+@patch('app.main.OpenAI')
+def test_openai_interaction(mock_openai_class):
+    # Mock the OpenAI class to return a mock object with a create method
+    mock_openai_instance = mock_openai_class.return_value
+    mock_openai_instance.generate.return_value = ["Mocked response"]
 
     response = client.post("/openai", json={"prompt": "Hello", "max_tokens": 5})
     assert response.status_code == 200

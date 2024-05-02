@@ -14,7 +14,7 @@ def test_healthcheck():
     assert response.json() == {"status": "ok"}
 
 def test_openai_interaction():
-    response = client.post("/openai", json={"prompt": ["Hello"], "max_tokens": 5})
+    response = client.post("/openai", json={"prompt": "Hello", "max_tokens": 5})
     assert response.status_code == 200
     # The response structure and content will depend on the actual OpenAI API response
     # Here we check for the structure only, as we're using a placeholder for the API key

@@ -18,4 +18,4 @@ RUN poetry config virtualenvs.create false \
 COPY . /app
 
 # Command to run the application using Uvicorn
-CMD ["poetry", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["poetry", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
